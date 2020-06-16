@@ -17,7 +17,6 @@ zip_ref.extractall('/tmp')
 zip_ref.close()
 
 try:
-    #YOUR CODE GOES HERE
     os.mkdir('/tmp/cats-v-dogs')
     os.mkdir('/tmp/cats-v-dogs/training')
     os.mkdir('/tmp/cats-v-dogs/testing')
@@ -87,8 +86,6 @@ model.compile(optimizer=RMSprop(lr=0.001), loss='binary_crossentropy', metrics=[
 TRAINING_DIR = "/tmp/cats-v-dogs/training"
 train_datagen = ImageDataGenerator(rescale=1.0/255)
 
-# NOTE: YOU MUST USE A BATCH SIZE OF 10 (batch_size=10) FOR THE 
-# TRAIN GENERATOR.
 train_generator = train_datagen.flow_from_directory(TRAINING_DIR, 
                                                     batch_size=10, 
                                                     class_mode='binary', 
@@ -97,8 +94,6 @@ train_generator = train_datagen.flow_from_directory(TRAINING_DIR,
 VALIDATION_DIR = "/tmp/cats-v-dogs/testing"
 validation_datagen = ImageDataGenerator(rescale=1.0/255)
 
-# NOTE: YOU MUST USE A BACTH SIZE OF 10 (batch_size=10) FOR THE 
-# VALIDATION GENERATOR.
 validation_generator = train_datagen.flow_from_directory(VALIDATION_DIR, 
                                                          batch_size=10, 
                                                          class_mode='binary', 
